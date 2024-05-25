@@ -1,0 +1,33 @@
+@model Practicatress.Models.Usuario;
+
+<h2>Contacto</h2>
+
+@using (Html.BeginForm("EnviarMensaje", "Cuenta", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Job)
+        @Html.TextBoxFor(model => model.Job, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Job)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Correo)
+        @Html.TextAreaFor(model => model.Correo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Correo)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Celular)
+        @Html.TextAreaFor(model => model.Celular, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Celular)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+}
+
+<h1>@ViewData["Message"]</h1>
